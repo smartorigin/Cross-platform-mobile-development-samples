@@ -1,0 +1,6 @@
+[submodule "React-Native/Djinnius-master/deps/djinni"]
+	path = React-Native/Djinnius-master/deps/djinni
+	url = https://github.com/dropbox/djinni.git
+[submodule "React-Native/Djinnius-master/deps/gyp"]
+	path = React-Native/Djinnius-master/deps/gyp
+	url = https://chromium.googlesource.com/external/gyp.git
