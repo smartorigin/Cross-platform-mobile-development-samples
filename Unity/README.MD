@@ -14,7 +14,7 @@
 
 - To deploy on iOS you need a provisionning profile (just an apple id)
 
-- iOS native plugin is build along with xcode build
+- iOS native plugin is build along with Xcode build
 
 ## Help 
 
