@@ -11,8 +11,14 @@ public class MyScript : MonoBehaviour {
 	[DllImport ("__Internal")]
 	private static extern int sum(int op1,int op2);
 	#elif UNITY_ANDROID
+	//android name of the Dll is "name of my .so file".replace("lib","").replace(".so",""), here my file is named : 'libnative.so'
 	[DllImport ("native")]
 	private static extern int sum(int op1,int op2);
+	#else
+	//fallback function
+	private int sum(int op1,int op2){
+		return op1 + op2;
+	}
 	#endif
 
 	private int op1Val = 0;
@@ -36,13 +42,17 @@ public class MyScript : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Called every time op1 value change
+	/// </summary>
+	/// <param name="arg0">Arg0.</param>
 	private void SubmitOp1(string arg0)
 	{
 		Debug.Log(arg0);
 		try{
 			int val = int.Parse(arg0);
 			this.op1Val= val;
-			this.treatRes(this.op1Val,this.op2Val);
+			this.performOp(this.op1Val,this.op2Val);
 		}
 		catch(Exception e){
 			Debug.Log(e);
@@ -51,13 +61,17 @@ public class MyScript : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Called every time op2 value change
+	/// </summary>
+	/// <param name="arg0">Arg0.</param>
 	private void SubmitOp2(string arg0)
 	{
 		Debug.Log(arg0);
 		try{
 			int val = int.Parse(arg0);
 			this.op2Val=val;
-			this.treatRes(this.op1Val,this.op2Val);
+			this.performOp(this.op1Val,this.op2Val);
 		}
 		catch(Exception e){
 			Debug.Log(e);
@@ -66,27 +80,28 @@ public class MyScript : MonoBehaviour {
 		}
 	}
 		
-	private void treatRes(int a,int b){
+	/// <summary>
+	/// Perform an operation and display results in UI
+	/// </summary>
+	/// <param name="a">Operand value A</param>
+	/// <param name="b">Operand value B</param>
+	private void performOp(int a,int b){
 		Debug.Log (a);
 		Debug.Log (b);
 		var res = gameObject.GetComponentsInChildren<Text>();
 		foreach (Text t in res) {
 			if (t.name.Equals ("output")) {
 
+				String platForm = "Non mobile";
 				#if UNITY_IOS
-				if (Application.platform == RuntimePlatform.IPhonePlayer)
-				{
-					t.text = "iOS : "+sum(a,b).ToString();
-				}
-				else{
-					t.text ="KO";
-				}
+				//if (Application.platform == RuntimePlatform.IPhonePlayer)
+				platForm="iOS";
 				#elif UNITY_ANDROID
-				t.text = "Android : "+sum(a,b).ToString();
+				platForm="Android";
 				#else
-				t.text = "Non mobile : "+(a+b).ToString();
+				//Do nothing
 				#endif
-
+				t.text = platForm + " : " + sum(a,b).ToString ();
 
 				break;
 			}
@@ -94,12 +109,15 @@ public class MyScript : MonoBehaviour {
 	}
 
 
-
+	/// <summary>
+	/// Display an error message according to an exception
+	/// </summary>
+	/// <param name="e">E.</param>
 	private void displayError(Exception e){
 		var res = gameObject.GetComponentsInChildren<Text>();
 		foreach (Text t in res) {
 			if (t.name.Equals ("output")) {
-				t.text = "One of the two operand as an incorrect value : "+e.Message+" "+e.StackTrace;	
+				t.text = "An error occured : "+e.Message+" "+e.StackTrace;	
 				break;
 			}
 		}
