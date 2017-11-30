@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:sample" x:Class="sample.samplePage">
+
+    <Grid Margin="10,50,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label HorizontalOptions="Center" FontSize="24" Grid.Row="0">Sample app calling native code</Label>
+        <Grid Margin="50,50,50,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="op1" Grid.Row="0" Grid.Column="0"></Entry>
+            <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Text="+" />
+            <Entry x:Name="op2" Grid.Row="0" Grid.Column="2"></Entry>
+            <Button Grid.Row="0" Grid.Column="3" Clicked="Handle_Clicked" Text="="></Button>
+            <Label Grid.Row="1" Grid.ColumnSpan="4" x:Name="resultsLabel" VerticalOptions="Center" HorizontalOptions="Center" />
+        </Grid>
+   </Grid>
+</ContentPage>
