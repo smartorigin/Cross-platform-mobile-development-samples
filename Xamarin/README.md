@@ -2,11 +2,11 @@
 
 ## Get started
 
-Setup your Xamarin dev env : https://www.xamarin.com/forms
+1. Setup your Xamarin dev env : https://www.xamarin.com/forms
 
-Open the project
+2. Open the project
 
-Run
+3. Run
 
 ## How it's done ?
 

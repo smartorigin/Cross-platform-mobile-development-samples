@@ -70,3 +70,8 @@ Run the following command :
 ## Help
 
 http://blog.tylerbuchea.com/how-to-create-a-react-native-ios-native-module/
+
+## Screenshot
+
+![](./screenshots/ios.png)
+***NB** "Hello World!" text is provided by native code*
