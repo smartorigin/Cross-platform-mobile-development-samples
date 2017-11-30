@@ -41,8 +41,8 @@ iOS : in `lib/iOS/MyLib` run `make`
     Add it in the correct libs folder set de .so file to you android `.csproj`
 
         <AndroidNativeLibrary Include="lib\armeabi-v7a\libnative.so"> <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-       <Abi>armeabi-v7a</Abi>
-       </AndroidNativeLibrary>
+        <Abi>armeabi-v7a</Abi>
+        </AndroidNativeLibrary>
 
 ## Help
 
