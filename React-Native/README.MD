@@ -61,6 +61,27 @@ Run the following command :
 
         export ANDROID_NDK=/Applications/android-ndk-r16/
 
+7. If you encounter (at compilation) time the following message :
+
+       error: unknown warning option '-Wno-literal-suffix'; did you mean '-Wno-literal-range'? [-Werror,-Wunknown-warning-option]
+    
+    Replace all occurences of  `-Wno-literal-suffix` in `libhelloworld_jni.targer.mk` and `/deps/djinni/support-lib/djinni_jni.target.mk` (ie the two .mk define by GypAndroid.mk)
+
+    E.G :
+
+        LOCAL_CPPFLAGS_Release := \
+	    -std=c++11 \
+	    -frtti \
+	    -fexceptions \
+	    -Wno-literal-suffix
+
+    Would be become :
+        
+        LOCAL_CPPFLAGS_Release := \
+	    -std=c++11 \
+	    -frtti \
+	    -fexceptions
+
 #### Troobleshooting iOS
 
 1. If you have the following error :
@@ -81,7 +102,12 @@ Run the following command :
 
 ## Screenshot
 
+ios
+
 ![](./screenshots/ios.png)
+
+android
+
 ![](./screenshots/android.png)
 
 ***NB** "Hello World!" text is provided by native code*
