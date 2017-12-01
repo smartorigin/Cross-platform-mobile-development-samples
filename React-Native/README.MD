@@ -3,8 +3,6 @@
 Based on  : https://github.com/MathieuDebit/Djinnius
 Which use : https://github.com/dropbox/djinni
 
-/!\ Native code binding to android not done
-
 Here's another sample code worth reading : https://github.com/boloutaredoubeni/Twenty48
 
 ## Get started
@@ -59,6 +57,10 @@ Run the following command :
      
         adb reverse tcp:8081 tcp:8081
 
+6. Export ANDROID_NDK :
+
+        export ANDROID_NDK=/Applications/android-ndk-r16/
+
 #### Troobleshooting iOS
 
 1. If you have the following error :
@@ -69,9 +71,17 @@ Run the following command :
 
 ## Help
 
-http://blog.tylerbuchea.com/how-to-create-a-react-native-ios-native-module/
+- http://blog.tylerbuchea.com/how-to-create-a-react-native-ios-native-module/
+
+- https://github.com/googlesamples/android-ndk/tree/master/hello-jni
+
+- https://shift.infinite.red/native-modules-for-react-native-android-ac05dbda800d
+
+- https://facebook.github.io/react-native/releases/0.21/docs/native-modules-android.html
 
 ## Screenshot
 
 ![](./screenshots/ios.png)
+![](./screenshots/android.png)
+
 ***NB** "Hello World!" text is provided by native code*

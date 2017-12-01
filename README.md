@@ -22,7 +22,7 @@ Clone this repo recursively (--recursive) then refer to the README file associat
 
 **C** → A simple lib that expose 'sum' method, a sample of the kind of code we would like to run.
 
-**React-Native** → A sample React Native project with a try to use native module (Only iOS works).
+**React-Native** → A sample React Native project with a try to use native module
 
 **Unity** → An Unity project that could run both on Android / iOS / Desktop (with a call to native code)
 

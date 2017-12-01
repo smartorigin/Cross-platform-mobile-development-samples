@@ -56,8 +56,7 @@ LOCAL_C_INCLUDES_Debug := \
 LOCAL_CPPFLAGS_Debug := \
 	-std=c++11 \
 	-frtti \
-	-fexceptions \
-	-Wno-literal-suffix
+	-fexceptions
 
 
 # Flags passed to both C and C++ files.
@@ -89,8 +88,7 @@ LOCAL_C_INCLUDES_Release := \
 LOCAL_CPPFLAGS_Release := \
 	-std=c++11 \
 	-frtti \
-	-fexceptions \
-	-Wno-literal-suffix
+	-fexceptions
 
 
 LOCAL_CFLAGS := $(MY_CFLAGS_$(GYP_CONFIGURATION)) $(MY_DEFS_$(GYP_CONFIGURATION))

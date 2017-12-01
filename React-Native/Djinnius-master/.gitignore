@@ -57,3 +57,7 @@ buck-out/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+
+*.so 
+*.a
+android/app/obj
