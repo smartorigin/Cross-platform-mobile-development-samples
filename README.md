@@ -16,11 +16,14 @@ Clone this repo recursively (--recursive) then refer to the README file associat
 
     Cross-plateform mobile devlopment samples 
     |-- C
+    |-- doc
     |-- React-Native
     |-- Unity
     |-- Xamarin
 
 **C** → A simple lib that expose 'sum' method, a sample of the kind of code we would like to run.
+
+**doc** → Contains a `.pdf` presentation that explain the experience behind this repo.
 
 **React-Native** → A sample React Native project with a try to use native module
 
