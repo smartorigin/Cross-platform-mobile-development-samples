@@ -1,4 +1,4 @@
-# Cross-plateform mobile devlopment samples
+# Cross-plateform mobile development samples
 
 This projects presents different samples for cross-plateform mobile devlopment.
 
