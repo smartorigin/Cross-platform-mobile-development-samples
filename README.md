@@ -1,8 +1,8 @@
-# Cross-plateform mobile development samples
+# Cross-platform mobile development samples
 
-This projects presents different samples for cross-plateform mobile devlopment.
+This projects presents different samples for cross-platform mobile devlopment.
 
-With goal to run native code in a crossplatform mobile devlopment context.
+With goal to run native code in a crossplatform mobile development context.
 
 By native code we say using managed code like a C/C++ module.
 
